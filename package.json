@@ -1,0 +1,23 @@
+{
+  "name": "behancer-proxy",
+  "version": "1.0.0",
+  "description": "Behancer proxy part",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ynk93/behancer-proxy.git"
+  },
+  "author": "Pozdniakov Bohdan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ynk93/behancer-proxy/issues"
+  },
+  "homepage": "https://github.com/ynk93/behancer-proxy#readme",
+  "dependencies": {
+    "http": "0.0.0",
+    "http-proxy": "^1.17.0"
+  }
+}
