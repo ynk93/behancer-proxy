@@ -1,4 +1,4 @@
-const http = require('http');
+var fs = require('fs');
 const httpProxy = require('http-proxy');
 
 
@@ -10,16 +10,22 @@ class Server {
 
     async init() {
 
+        var server1 = '13.69.75.191:3128';
+        var server2 = '178.62.231.71:8080';
+
         var proxy = httpProxy.createServer({
-            auth: 'lum-customer-hl_e65b55fa-zone-static-ip-178.171.88.167:ub5cdtoo31n6',
             target: {
-                host: 'zproxy.lum-superproxy.io',
-                port: 22225
+                protocol: 'https:',
+                host: '178.62.231.71',
+                port: '8080',
+                pfx: fs.readFileSync('cert/user1-cert.p12'),
+                passphrase: 'ziplzipl'
             },
+            changeOrigin: true,
             toProxy: true
         });
 
-        proxy.listen(5050);
+        proxy.listen(8080);
 
         console.log('starting');
 
